@@ -3,8 +3,7 @@
     xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
     id="WebApp_ID" version="2.5">
 
-    <!-- Main sample servlet mapped to / so that the integration test harness can detect readiness (generic for all samples) -->
-    <servlet>
+<servlet>
         <servlet-name>PersistenceWithJDBCServlet</servlet-name>
         <servlet-class>com.sap.cloud.sample.persistence.PersistenceWithJDBCServlet</servlet-class>
     </servlet>
@@ -13,7 +12,6 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <!-- Declare the JNDI lookup of the default data source -->
     <resource-ref>
         <res-ref-name>jdbc/DefaultDB</res-ref-name>
         <res-type>javax.sql.DataSource</res-type>

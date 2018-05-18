@@ -8,40 +8,24 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
 import javax.sql.DataSource;
 
-/**
- * Data access object encapsulating all JDBC operations for a person.
- */
 public class PersonDAO {
     private DataSource dataSource;
 
-    /**
-     * Create new data access object with data source.
-     */
     public PersonDAO(DataSource newDataSource) throws SQLException {
         setDataSource(newDataSource);
     }
 
-    /**
-     * Get data source which is used for the database operations.
-     */
     public DataSource getDataSource() {
         return dataSource;
     }
 
-    /**
-     * Set data source to be used for the database operations.
-     */
     public void setDataSource(DataSource newDataSource) throws SQLException {
         this.dataSource = newDataSource;
         checkTable();
     }
 
-    /**
-     * Add a person to the table.
-     */
     public void addPerson(Person person) throws SQLException {
         Connection connection = dataSource.getConnection();
 
@@ -59,9 +43,6 @@ public class PersonDAO {
         }
     }
 
-    /**
-     * Get all persons from the table.
-     */
     public List<Person> selectAllPersons() throws SQLException {
         Connection connection = dataSource.getConnection();
         try {
@@ -84,9 +65,6 @@ public class PersonDAO {
         }
     }
 
-    /**
-     * Check if the person table already exists and create it if not.
-     */
     private void checkTable() throws SQLException {
         Connection connection = null;
 
@@ -102,9 +80,6 @@ public class PersonDAO {
         }
     }
 
-    /**
-     * Check if the person table already exists.
-     */
     private boolean existsTable(Connection conn) throws SQLException {
         DatabaseMetaData meta = conn.getMetaData();
         ResultSet rs = meta.getTables(null, null, "T_PERSONS", null);
@@ -117,9 +92,6 @@ public class PersonDAO {
         return false;
     }
 
-    /**
-     * Create the person table.
-     */
     private void createTable(Connection connection) throws SQLException {
         PreparedStatement pstmt = connection
                 .prepareStatement("CREATE TABLE T_PERSONS "

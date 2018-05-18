@@ -21,7 +21,6 @@ public class PersistenceWithJDBCServlet extends HttpServlet {
 
     private PersonDAO personDAO;
 
-    /** {@inheritDoc} */
     @Override
     public void init() throws ServletException {
         try {
@@ -35,7 +34,6 @@ public class PersistenceWithJDBCServlet extends HttpServlet {
         }
     }
 
-    /** {@inheritDoc} */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.getWriter().println("<p>Persistence with JDBC Sample!</p>");

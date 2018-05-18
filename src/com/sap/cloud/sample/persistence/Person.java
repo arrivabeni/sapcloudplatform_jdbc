@@ -1,8 +1,5 @@
 package com.sap.cloud.sample.persistence;
 
-/**
- * Class holding information on a person.
- */
 public class Person {
     private String id;
     private String firstName;
