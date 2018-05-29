@@ -1,5 +1,8 @@
 Jerry blog: [Use JDBC to connect to HANA database instance in SAP Cloud Platform](https://blogs.sap.com/2018/05/18/use-jdbc-to-connect-to-hana-database-instance-in-sap-cloud-platform/)
 
+github url: https://github.com/i042416/sapcloudplatform_jdbc
+
+local path: C:\Users\i042416\scp20180425\persistence-with-jdbc
 
 ##################################################################
 # Welcome to the SAP Cloud Platform Persistence with JDBC Sample #
